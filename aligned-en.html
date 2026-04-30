@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paws.kz — Pitch Deck (EN)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --orange: #F5921B;
+    --orange-light: #FFF3E0;
+    --pink: #E8567F;
+    --pink-light: #FFF0F3;
+    --green: #2ECC71;
+    --green-light: #EAFAF1;
+    --blue: #3B82F6;
+    --blue-light: #EFF6FF;
+    --text: #1A1A2E;
+    --text-secondary: #64748B;
+    --bg: #FFFFFF;
+    --card-bg: #FAFAFA;
+    --border: #F0F0F0;
+  }
+
+  body { font-family: 'Inter', sans-serif; background: #F5F5F5; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .slide {
+    width: 1280px; height: 720px; margin: 20px auto; padding: 56px 64px;
+    background: var(--bg); border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    page-break-after: always; display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+
+  @media print { .slide { margin:0; box-shadow:none; border-radius:0; width:100vw; height:100vh; } body { background:white; } }
+
+  .logo { font-weight: 800; font-size: 18px; color: var(--orange); letter-spacing: -0.5px; margin-bottom: 24px; }
+  .slide-num { position: absolute; bottom: 24px; right: 64px; font-size: 12px; color: #CBD5E1; font-weight: 600; }
+  .slide-cap { position: absolute; bottom: 24px; left: 64px; font-size: 11px; color: #94A3B8; font-weight: 500; }
+
+  h1 { font-size: 56px; font-weight: 900; letter-spacing: -2.5px; line-height: 1.05; color: var(--text); }
+  h2 { font-size: 30px; font-weight: 800; letter-spacing: -1px; margin-bottom: 24px; color: var(--text); }
+  h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+
+  .sub { font-size: 19px; color: var(--text-secondary); font-weight: 400; line-height: 1.6; max-width: 720px; }
+
+  .tag { display:inline-block; padding: 5px 12px; border-radius: 100px; font-size: 11px; font-weight: 600; }
+  .tag-orange { background: var(--orange-light); color: var(--orange); }
+  .tag-pink { background: var(--pink-light); color: var(--pink); }
+  .tag-green { background: var(--green-light); color: var(--green); }
+  .tag-blue { background: var(--blue-light); color: var(--blue); }
+
+  .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; flex:1; }
+  .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; }
+  .grid-4 { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:14px; }
+
+  .card { background: var(--card-bg); border-radius: 12px; padding: 20px; border: 1px solid var(--border); }
+
+  .metric { text-align:center; padding:16px 10px; }
+  .metric .val { font-size: 36px; font-weight: 900; color: var(--orange); line-height: 1; }
+  .metric .val.pink { color: var(--pink); }
+  .metric .val.green { color: var(--green); }
+  .metric .val.blue { color: var(--blue); }
+  .metric .lbl { font-size: 12px; color: var(--text-secondary); margin-top: 6px; font-weight: 500; }
+
+  .item { display:flex; gap:12px; margin-bottom:14px; align-items:flex-start; }
+  .item-icon { width:36px; height:36px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+  .item-text { font-size:14px; line-height:1.45; }
+  .item-text strong { display:block; font-weight:600; margin-bottom:1px; }
+  .item-text span { color: var(--text-secondary); font-size:12px; }
+
+  .bar-chart { display:flex; align-items:flex-end; gap:5px; height:170px; }
+  .bar-col { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+  .bar { width:100%; border-radius:5px 5px 0 0; background: var(--orange); min-height:3px; }
+  .bar.proj { background: var(--orange-light); border: 1.5px dashed var(--orange); }
+  .bar-val { font-size:9px; font-weight:700; margin-bottom:2px; color: var(--text); }
+  .bar-lbl { font-size:9px; color: var(--text-secondary); margin-top:4px; font-weight:500; }
+
+  .timeline { display:flex; gap:0; flex:1; }
+  .tl-item { flex:1; padding:16px 14px; border-left:3px solid var(--orange); }
+  .tl-item .yr { font-size:12px; font-weight:700; color:var(--orange); margin-bottom:8px; }
+  .tl-item ul { list-style:none; font-size:11px; line-height:1.7; color:var(--text-secondary); }
+  .tl-item li::before { content:'>'; color:var(--orange); margin-right:5px; font-weight:700; }
+
+  .row { display:flex; gap:12px; align-items:center; padding:9px 0; border-bottom:1px solid var(--border); }
+  .row:last-child { border-bottom:none; }
+  .row-label { color:var(--text-secondary); font-size:13px; flex:1; }
+  .row-value { font-weight:700; font-size:15px; }
+
+  .check { color: var(--green); }
+  .cross { color: #EF4444; }
+
+  .accent-line { width:36px; height:3px; background:var(--orange); border-radius:2px; margin-bottom:12px; }
+</style>
+</head>
+<body>
+
+<!-- 1. INTRO -->
+<div class="slide" style="justify-content:center; padding: 64px 72px;">
+  <div style="position:absolute; top:0; right:0; width:380px; height:380px; background:radial-gradient(circle at 80% 20%, rgba(245,146,27,0.06) 0%, transparent 70%);"></div>
+  <div style="position:absolute; bottom:0; left:0; width:300px; height:300px; background:radial-gradient(circle at 20% 80%, rgba(232,86,127,0.04) 0%, transparent 70%);"></div>
+
+  <div style="display:flex; gap:8px; margin-bottom:20px;">
+    <span class="tag tag-orange">AI-Powered</span>
+    <span class="tag tag-pink">Pet Care</span>
+    <span class="tag tag-green">Marketplace</span>
+    <span class="tag tag-blue">Global Ambition</span>
+  </div>
+
+  <h1 style="margin-bottom:14px;">Paws</h1>
+  <p class="sub">AI marketplace for pet care. One Claude-powered bot &rarr; many countries. Unit economics and breakeven proven in Kazakhstan — building the global AI pet-care story from here.</p>
+
+  <div class="grid-4" style="max-width:680px; margin-top:40px; flex:0;">
+    <div class="metric"><div class="val">100M+</div><div class="lbl">₸ GMV<br>in 2 years</div></div>
+    <div class="metric"><div class="val pink">1,500+</div><div class="lbl">clients</div></div>
+    <div class="metric"><div class="val green">6.4M</div><div class="lbl">₸ Apr 2026<br>(breakeven 5.7M)</div></div>
+    <div class="metric"><div class="val blue">380+</div><div class="lbl">verified<br>helpers</div></div>
+  </div>
+  <div class="slide-num">01</div>
+</div>
+
+<!-- 2. PROBLEM -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>Problem</h2>
+  <div class="grid-2">
+    <div>
+      <div class="accent-line" style="background:#EF4444;"></div>
+      <h3 style="color:#EF4444;">Pet owners have no reliable solution</h3>
+      <div class="item"><div class="item-icon" style="background:#FEF2F2;">&#128557;</div><div class="item-text"><strong>Where do you leave the dog on vacation?</strong><span>Relatives won't take them, friends are a lottery</span></div></div>
+      <div class="item"><div class="item-icon" style="background:#FEF2F2;">&#9200;</div><div class="item-text"><strong>Days hunting for a sitter on Instagram</strong><span>Messaging strangers, hoping for the best</span></div></div>
+      <div class="item"><div class="item-icon" style="background:#FEF2F2;">&#128683;</div><div class="item-text"><strong>Zero guarantees</strong><span>No screening, no insurance, history of stolen pets</span></div></div>
+      <div class="item"><div class="item-icon" style="background:#FEF2F2;">&#128531;</div><div class="item-text"><strong>Pet hotels = cages</strong><span>Pet stressed, owner feels guilty</span></div></div>
+    </div>
+    <div>
+      <div class="accent-line" style="background:#EF4444;"></div>
+      <h3 style="color:#EF4444;">The real competitor — Kaspi/OLX private listings</h3>
+      <div class="card" style="background:var(--orange-light); border-color:rgba(245,146,27,0.15); margin-bottom:14px;">
+        <div style="font-size:13px; line-height:1.7;">
+          200+ unlicensed pet sitters in Almaty and Astana.<br>
+          Prices 1,000–3,500 ₸/night. <strong>Zero quality.</strong>
+        </div>
+      </div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.7;">
+        <strong style="color:var(--text);">TAM KZ pet care:</strong> $200–280M/year<br>
+        <strong style="color:var(--text);">Paws share today:</strong> 0.06% — market wide open<br>
+        <strong style="color:var(--text);">Whitespace:</strong> "trusted home-based marketplace" — no one has taken it.
+      </div>
+      <div class="card" style="background:#FEF2F2; border-color:rgba(239,68,68,0.15); padding:12px 16px; margin-top:14px;">
+        <div style="font-size:12px; color:var(--text-secondary); line-height:1.6;">
+          <strong style="color:#EF4444;">This is a problem AI can't solve on its own.</strong> Real humans must walk, feed, care. AI is the trust and matching layer — not a replacement for the service itself.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">02</div>
+</div>
+
+<!-- 3. SOLUTION -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>Solution — AI marketplace with verified helpers</h2>
+  <div class="grid-2">
+    <div>
+      <div class="card" style="background:var(--orange-light); border-color:rgba(245,146,27,0.15); height:100%;">
+        <div class="accent-line"></div>
+        <h3>How it works</h3>
+        <div style="margin-top:10px;">
+          <div class="item"><div class="item-icon" style="background:white; font-weight:800; color:var(--orange);">1</div><div class="item-text"><strong>Client messages the bot</strong><span>Telegram, WhatsApp, Instagram — one entry point</span></div></div>
+          <div class="item"><div class="item-icon" style="background:white; font-weight:800; color:var(--orange);">2</div><div class="item-text"><strong>AI qualifies and prices the order</strong><span>Claude API: service, pet, formula, special risks</span></div></div>
+          <div class="item"><div class="item-icon" style="background:white; font-weight:800; color:var(--orange);">3</div><div class="item-text"><strong>Helper match (6 factors)</strong><span>Experience, area, rating, history, specialization</span></div></div>
+          <div class="item"><div class="item-icon" style="background:white; font-weight:800; color:var(--orange);">4</div><div class="item-text"><strong>Secure payment + ongoing care</strong><span>Buhta.kz · photo updates · vaccine reminders</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="card">
+        <h3>Unfair advantage — cynologist at the core</h3>
+        <div style="font-size:12px; color:var(--text-secondary); line-height:1.7;">
+          A practicing canine specialist screens every helper. <strong style="color:var(--text);">No competitor in KZ/CIS does this.</strong> Protects against bite risk, lost pets, and dog conflicts.
+        </div>
+      </div>
+      <div class="card" style="background:var(--green-light); border-color:rgba(46,204,113,0.2);">
+        <h3 style="color:var(--green);">Working AI Brain — production now</h3>
+        <div style="font-size:11px; line-height:1.85;">
+          <div style="display:flex; justify-content:space-between;"><span style="color:var(--text-secondary);">Wiki knowledge pages</span><strong>1,200+</strong></div>
+          <div style="display:flex; justify-content:space-between;"><span style="color:var(--text-secondary);">Vector entries (hybrid search)</span><strong>14,000</strong></div>
+          <div style="display:flex; justify-content:space-between;"><span style="color:var(--text-secondary);">Memory per client</span><strong>Pet, allergies, sitter</strong></div>
+          <div style="display:flex; justify-content:space-between;"><span style="color:var(--text-secondary);">Sandbox-trained on</span><strong>10,000+ dialogues</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">03</div>
+</div>
+
+<!-- 4. WHY NOW -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>Why now</h2>
+  <div class="grid-2" style="gap:20px;">
+    <div>
+      <div class="accent-line" style="background:var(--orange);"></div>
+      <h3>AI is eating industries. Except one.</h3>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.6; margin-bottom:10px;">
+        70% of white-collar jobs face automation risk. Copywriting, design, accounting, engineering — AI is replacing them.
+      </div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.6; margin-bottom:12px;">
+        But AI <strong style="color:var(--text);">will never</strong> walk a dog, feed a cat, or babysit a puppy. Physical care is the last bastion of the real economy.
+      </div>
+      <div class="card" style="background:var(--orange-light); border-color:rgba(245,146,27,0.15); padding:14px 18px; margin-bottom:10px;">
+        <div style="font-size:24px; font-weight:900; color:var(--orange);">30%</div>
+        <div style="font-size:12px; color:var(--text-secondary);">of the economy <strong style="color:var(--text);">cannot be replaced by machines</strong> — real humans do real physical work</div>
+      </div>
+      <div class="card" style="background:var(--green-light); border-color:rgba(46,204,113,0.2); padding:14px 18px;">
+        <div style="font-size:24px; font-weight:900; color:var(--green);">39%</div>
+        <div style="font-size:12px; color:var(--text-secondary);">of KZ households own a pet — we're building the <strong style="color:var(--text);">super-app for all of them</strong></div>
+      </div>
+    </div>
+    <div>
+      <div class="accent-line" style="background:var(--green);"></div>
+      <h3>Our model: AI margins + automation-proof service</h3>
+      <div class="card" style="margin-bottom:10px; padding:12px 16px;">
+        <div style="font-size:12px; font-weight:700; color:var(--orange); margin-bottom:6px;">What AI automates (90% of ops)</div>
+        <div style="font-size:11px; color:var(--text-secondary); line-height:1.7;">
+          <div><span class="check">&#10003;</span> Sales &amp; qualification — replaces ~1.5 FTE managers</div>
+          <div><span class="check">&#10003;</span> Matching &amp; pricing — 6-factor algorithm</div>
+          <div><span class="check">&#10003;</span> Communication &amp; follow-up — 24/7</div>
+          <div><span class="check">&#10003;</span> End-to-end analytics — Customer Intelligence Platform</div>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom:10px; padding:12px 16px;">
+        <div style="font-size:12px; font-weight:700; color:var(--green); margin-bottom:6px;">What humans do (core service)</div>
+        <div style="font-size:11px; color:var(--text-secondary); line-height:1.7;">
+          &#128054; Walking &amp; boarding &nbsp;&nbsp; &#9986;&#65039; Grooming<br>
+          &#127891; Cynology &nbsp;&nbsp; &#128137; Veterinary &nbsp;&nbsp; &#128663; Pet taxi
+        </div>
+      </div>
+      <div class="card" style="padding:10px 16px;">
+        <div style="font-size:13px; font-weight:700;">One entry point &rarr; every service &rarr; one AI that knows your pet</div>
+        <div style="font-size:11px; color:var(--text-secondary); margin-top:4px;">Boarding &rarr; Grooming &rarr; Cynology &rarr; Veterinary &rarr; Pet taxi &rarr; Insurance</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">04</div>
+</div>
+
+<!-- 5. MARKET SIZE -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>Market size</h2>
+  <div style="display:flex; align-items:center; justify-content:center; gap:48px; flex:1;">
+    <div style="text-align:center;">
+      <div style="width:180px; height:180px; border-radius:50%; border:3px solid rgba(245,146,27,0.2); background:var(--orange-light); display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div style="font-size:11px; font-weight:700; color:var(--orange); letter-spacing:1px;">TAM</div>
+        <div style="font-size:32px; font-weight:900; color:var(--orange);">$10B</div>
+        <div style="font-size:11px; color:var(--text-secondary);">53M owners<br>across CIS</div>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:160px; height:160px; border-radius:50%; border:3px solid rgba(59,130,246,0.2); background:#EFF6FF; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div style="font-size:11px; font-weight:700; color:var(--blue); letter-spacing:1px;">SAM</div>
+        <div style="font-size:28px; font-weight:900; color:var(--blue);">$1B</div>
+        <div style="font-size:11px; color:var(--text-secondary);">5.5M owners<br>$750+ income</div>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:140px; height:140px; border-radius:50%; border:3px solid rgba(46,204,113,0.3); background:var(--green-light); display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div style="font-size:11px; font-weight:700; color:var(--green); letter-spacing:1px;">SOM</div>
+        <div style="font-size:24px; font-weight:900; color:var(--green);">$18M</div>
+        <div style="font-size:11px; color:var(--text-secondary);">KZ + UZ +<br>Georgia</div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-3" style="flex:0; margin-top:8px;">
+    <div class="card" style="padding:12px 18px;"><div style="font-size:11px; color:var(--text-secondary);">Global pet care 2024</div><div style="font-size:17px; font-weight:800;">$247B <span style="color:var(--orange); font-size:13px;">&rarr; $428B by 2032</span></div></div>
+    <div class="card" style="padding:12px 18px;"><div style="font-size:11px; color:var(--text-secondary);">KZ pet population</div><div style="font-size:17px; font-weight:800;">2.3M <span style="color:var(--text-secondary); font-size:13px;">cats &amp; dogs</span></div></div>
+    <div class="card" style="padding:12px 18px;"><div style="font-size:11px; color:var(--text-secondary);">Rover + Wag in CIS</div><div style="font-size:17px; font-weight:800;">Don't operate <span style="color:var(--green); font-size:13px;">&rarr; open market</span></div></div>
+  </div>
+  <div class="slide-cap">TAM KZ = $200-280M · Paws 0.06% · growth = breadth (new channels × services × countries), not depth in one channel</div>
+  <div class="slide-num">05</div>
+</div>
+
+<!-- 6. BUSINESS MODEL -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>Business model</h2>
+  <div class="grid-2" style="flex:1;">
+    <div class="card">
+      <div class="accent-line"></div>
+      <h3>Unit economics per order</h3>
+      <div class="row"><div class="row-label">Avg. order value</div><div class="row-value">61,270 ₸</div></div>
+      <div class="row"><div class="row-label">Gross margin</div><div class="row-value" style="color:var(--green);">~50%</div></div>
+      <div class="row"><div class="row-label">Helper payout</div><div class="row-value">~45%</div></div>
+      <div class="row"><div class="row-label">Acquiring + payouts (Buhta.kz)</div><div class="row-value">~5%</div></div>
+      <div class="row"><div class="row-label">Gross profit per order</div><div class="row-value" style="color:var(--green);">~30,600 ₸</div></div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="card" style="background:var(--orange-light); border-color:rgba(245,146,27,0.12); flex:1;">
+        <div class="accent-line" style="background:var(--green);"></div>
+        <h3>Key metrics</h3>
+        <div style="margin-top:10px;">
+          <div style="margin-bottom:12px;">
+            <div style="font-size:11px; color:var(--text-secondary);">CAC (current)</div>
+            <div style="font-size:24px; font-weight:900;">~15,000 ₸</div>
+            <div style="font-size:10px; color:var(--text-secondary);">Optimized from 48K (Jan) to 15K (Apr '26)</div>
+          </div>
+          <div style="margin-bottom:12px;">
+            <div style="font-size:11px; color:var(--text-secondary);">LTV (12-month cohort)</div>
+            <div style="font-size:24px; font-weight:900; color:var(--green);">~80,000 ₸</div>
+            <div style="font-size:10px; color:var(--text-secondary);">58% repeat rate · top cohorts 100K+</div>
+          </div>
+          <div>
+            <div style="font-size:11px; color:var(--text-secondary);">LTV / CAC</div>
+            <div style="font-size:24px; font-weight:900; color:var(--orange);">5.3x</div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background:#EFF6FF; border-color:rgba(59,130,246,0.15); padding:10px 16px;">
+        <h3 style="font-size:14px; color:var(--blue);">AI economics</h3>
+        <div style="font-size:11px; color:var(--text-secondary); line-height:1.65;">
+          <strong style="color:var(--text);">~$0.06 per turn</strong> · ~$180/mo at current load<br>
+          Replaces <strong style="color:var(--text);">~1.5 FTE managers</strong> (~600K ₸/mo payroll savings)<br>
+          Marginal cost per client $0 &rarr; unit economics improve as GMV grows
+        </div>
+      </div>
+      <div class="card" style="padding:10px 16px;">
+        <h3 style="font-size:14px;">Additional revenue streams</h3>
+        <div style="font-size:11px; color:var(--text-secondary); line-height:1.7;">
+          &#128737;&#65039; Insurance (Art. 329 Civil Code) — pilot Q4 · &#9986;&#65039; Grooming 25% — Q3 · &#127891; Cynology — Q4 · &#127973; Vet referral
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="padding:12px 22px; display:flex; align-items:center; gap:20px; margin-top:10px;">
+    <span style="font-size:12px; color:var(--text-secondary);">Breakeven:</span>
+    <span style="font-weight:700;">5.7M ₸/mo</span>
+    <span style="color:var(--text-secondary);">=</span>
+    <span style="font-weight:700;">~88 orders/mo</span>
+    <span style="margin-left:auto; color:var(--green); font-weight:600; font-size:12px;">&#10003; Cleared in April 2026 — actual 6.4M ₸</span>
+  </div>
+  <div class="slide-num">06</div>
+</div>
+
+<!-- 7. COMPETITORS -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>Competitors</h2>
+  <div class="grid-3" style="flex:0; margin-bottom:14px;">
+    <div class="card" style="padding:16px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+        <div style="width:26px; height:26px; border-radius:6px; background:#F3E8FF; display:flex; align-items:center; justify-content:center; font-size:13px;">&#128054;</div>
+        <h3 style="margin:0; font-size:14px;">VOX</h3>
+        <span class="tag tag-pink" style="font-size:9px; padding:2px 7px;">RU, Sber acc.</span>
+      </div>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.6;">
+        Telegram bot for dog walking. Sber accelerator. 35M ₽ crowdinvesting. Moscow + St. Petersburg. AI features.<br>
+        <strong style="color:var(--text);">Gap:</strong> RU-only, ~10M ₸/yr GMV (vs our 100M+ ₸ in 2 years).
+      </div>
+    </div>
+    <div class="card" style="padding:16px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+        <div style="width:26px; height:26px; border-radius:6px; background:#F5F5F5; display:flex; align-items:center; justify-content:center; font-size:13px;">&#128106;</div>
+        <h3 style="margin:0; font-size:14px;">Kaspi/OLX private listings</h3>
+        <span style="font-size:9px; color:var(--text-secondary);">~70% of market</span>
+      </div>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.6;">
+        200+ unlicensed sitters. 1,000–3,500 ₸/night. Zero quality control.<br>
+        <strong style="color:var(--text);">Gap:</strong> zero accountability, zero insurance, zero service.
+      </div>
+    </div>
+    <div class="card" style="padding:16px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+        <div style="width:26px; height:26px; border-radius:6px; background:#FEF9EF; display:flex; align-items:center; justify-content:center; font-size:13px;">&#127968;</div>
+        <h3 style="margin:0; font-size:14px;">Pet hotels</h3>
+        <span class="tag tag-orange" style="font-size:9px; padding:2px 7px;">~40 in Almaty</span>
+      </div>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.6;">
+        Cages, stress. Fixed location. Low NPS, owner guilt.<br>
+        <strong style="color:var(--text);">Gap:</strong> no home experience, no individual care.
+      </div>
+    </div>
+  </div>
+  <div class="grid-2" style="flex:0;">
+    <div class="card" style="padding:14px 18px;">
+      <div style="font-size:12px; font-weight:700; color:var(--green); margin-bottom:6px;">Where we win</div>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.85;">
+        <div><span class="check">&#10003;</span> Only AI platform in CIS (Claude API in production)</div>
+        <div><span class="check">&#10003;</span> Cynologist in core verification — unique in KZ</div>
+        <div><span class="check">&#10003;</span> 380+ helpers (162 Astana + 221 Almaty)</div>
+        <div><span class="check">&#10003;</span> Customer Intelligence Platform: 396 paying, 10 RFM, VOC, At-Risk</div>
+        <div><span class="check">&#10003;</span> 139K real dialogues = data moat impossible to copy</div>
+      </div>
+    </div>
+    <div class="card" style="padding:14px 18px;">
+      <div style="font-size:12px; font-weight:700; color:var(--orange); margin-bottom:6px;">Gaps we're closing</div>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.85;">
+        <div><span class="cross">&#10007;</span> No insurance yet (pilot Dec 2026, Art. 329 Civil Code)</div>
+        <div><span class="cross">&#10007;</span> 2 cities vs PetBacker's 50 countries</div>
+        <div><span class="cross">&#10007;</span> 3 services vs 5+ needed (grooming/cynology/insurance on roadmap)</div>
+        <div style="margin-top:4px; color:var(--orange); font-weight:500;">&rarr; Multi-service + multi-country on a single AI infrastructure (no apps)</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; font-size:11px; color:var(--text-secondary); margin-top:10px;">
+    Rover ($2.3B) and Wag ($350M) don't operate in CIS. The market is open for a regional champion.
+  </div>
+  <div class="slide-num">07</div>
+</div>
+
+<!-- 8. TRACTION -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>Traction during the program</h2>
+  <div class="grid-4" style="flex:0; margin-bottom:14px;">
+    <div class="card metric"><div class="val">6.4M</div><div class="lbl">₸ Apr 2026 actual<br>(breakeven 5.7M)</div></div>
+    <div class="card metric"><div class="val pink">68%</div><div class="lbl">CAC reduction<br>48K &rarr; 15K ₸</div></div>
+    <div class="card metric"><div class="val green">380+</div><div class="lbl">verified<br>helpers</div></div>
+    <div class="card metric"><div class="val blue">10K+</div><div class="lbl">dialogues in<br>bot training</div></div>
+  </div>
+
+  <h3 style="margin-bottom:6px; font-size:14px;">Monthly GMV (₸ M) · actual + plan forecast</h3>
+  <div class="bar-chart" style="height:140px;">
+    <div class="bar-col"><div class="bar-val">3.6</div><div class="bar" style="height:14%;"></div><div class="bar-lbl">Mar'25</div></div>
+    <div class="bar-col"><div class="bar-val">5.9</div><div class="bar" style="height:24%;"></div><div class="bar-lbl">Aug'25</div></div>
+    <div class="bar-col"><div class="bar-val">8.4</div><div class="bar" style="height:34%;"></div><div class="bar-lbl">Dec'25</div></div>
+    <div class="bar-col"><div class="bar-val">5.4</div><div class="bar" style="height:22%;"></div><div class="bar-lbl">Feb</div></div>
+    <div class="bar-col"><div class="bar-val">5.7</div><div class="bar" style="height:23%;"></div><div class="bar-lbl">Mar</div></div>
+    <div class="bar-col"><div class="bar-val">6.4</div><div class="bar" style="height:26%;"></div><div class="bar-lbl">Apr</div></div>
+    <div class="bar-col"><div class="bar-val">10</div><div class="bar proj" style="height:40%;"></div><div class="bar-lbl">May</div></div>
+    <div class="bar-col"><div class="bar-val">12</div><div class="bar proj" style="height:48%;"></div><div class="bar-lbl">Jun</div></div>
+    <div class="bar-col"><div class="bar-val">15</div><div class="bar proj" style="height:60%;"></div><div class="bar-lbl">Jul</div></div>
+    <div class="bar-col"><div class="bar-val">14</div><div class="bar proj" style="height:56%;"></div><div class="bar-lbl">Aug</div></div>
+    <div class="bar-col"><div class="bar-val">14</div><div class="bar proj" style="height:56%;"></div><div class="bar-lbl">Sep</div></div>
+    <div class="bar-col"><div class="bar-val">17</div><div class="bar proj" style="height:68%;"></div><div class="bar-lbl">Oct</div></div>
+    <div class="bar-col"><div class="bar-val">20</div><div class="bar proj" style="height:80%;"></div><div class="bar-lbl">Nov</div></div>
+    <div class="bar-col"><div class="bar-val">25</div><div class="bar proj" style="height:100%;"></div><div class="bar-lbl">Dec</div></div>
+  </div>
+  <div style="display:flex; gap:14px; margin-top:6px; font-size:11px; color:var(--text-secondary);">
+    <div><span style="display:inline-block; width:10px; height:10px; background:var(--orange); border-radius:2px; margin-right:4px; vertical-align:middle;"></span>Actual</div>
+    <div><span style="display:inline-block; width:10px; height:10px; background:var(--orange-light); border:1.5px dashed var(--orange); border-radius:2px; margin-right:4px; vertical-align:middle;"></span>Forecast</div>
+    <div style="margin-left:auto;"><strong>EOY 2026:</strong> 127M ₸ GMV · ~32M ₸ cumulative profit · Dec run-rate 25M ₸/mo</div>
+  </div>
+
+  <h3 style="margin-bottom:6px; font-size:13px; margin-top:14px;">Platform evolution — actual timeline</h3>
+  <div style="display:flex; gap:6px; align-items:stretch;">
+    <div style="flex:1; background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:8px 10px;">
+      <div style="font-size:9px; font-weight:700; color:var(--text-secondary); margin-bottom:2px;">2024-2025</div>
+      <div style="font-size:10px; font-weight:700;">Pre-AI baseline</div>
+      <div style="font-size:9px; color:var(--text-secondary); line-height:1.4;">~1.5 FTE managers via Instagram. 100M+ ₸ GMV. 16K Bitrix deals.</div>
+    </div>
+    <div style="flex:1; background:var(--orange-light); border:1px solid rgba(245,146,27,0.3); border-radius:8px; padding:8px 10px;">
+      <div style="font-size:9px; font-weight:700; color:var(--orange); margin-bottom:2px;">Mar-Apr 2026 (8 wks)</div>
+      <div style="font-size:10px; font-weight:700;">0 &rarr; production AI</div>
+      <div style="font-size:9px; color:var(--text-secondary); line-height:1.4;">Claude · hybrid search · in-code questionnaire · supervisor · Customer Intelligence</div>
+    </div>
+    <div style="flex:1; background:var(--green-light); border:1px solid rgba(46,204,113,0.3); border-radius:8px; padding:8px 10px;">
+      <div style="font-size:9px; font-weight:700; color:var(--green); margin-bottom:2px;">May 2026 (now)</div>
+      <div style="font-size:10px; font-weight:700;">Marketplace + telephony + 0.85 quality</div>
+      <div style="font-size:9px; color:var(--text-secondary); line-height:1.4;">Page B · auto-redirect · 100% canary · TikTok+Yandex launch · Astana Hub</div>
+    </div>
+    <div style="flex:1; background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:8px 10px;">
+      <div style="font-size:9px; font-weight:700; color:var(--pink); margin-bottom:2px;">Jun-Aug 2026</div>
+      <div style="font-size:10px; font-weight:700;">Grooming + ML 0.92 quality</div>
+      <div style="font-size:9px; color:var(--text-secondary); line-height:1.4;">Grooming launch (Aug) · Reflexion · MIPROv2 · det. CI · channel scaling</div>
+    </div>
+    <div style="flex:1; background:#FAFAFA; border:1px dashed #CBD5E1; border-radius:8px; padding:8px 10px;">
+      <div style="font-size:9px; font-weight:700; color:var(--text-secondary); margin-bottom:2px;">Q4 2026</div>
+      <div style="font-size:10px; font-weight:700;">Cynology + Insurance + 0.95</div>
+      <div style="font-size:9px; color:var(--text-secondary); line-height:1.4;">Cynology · Art. 329 Civil Code pilot · BGE-M3 + GEPA · Seed kickoff</div>
+    </div>
+  </div>
+  <div class="slide-num">08</div>
+</div>
+
+<!-- 9. ROADMAP -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>Roadmap — from breakeven in KZ to global AI pet-care</h2>
+
+  <div style="flex:1; display:flex; flex-direction:column; gap:12px;">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="yr">May 2026 · "Sprint month"</div>
+        <ul>
+          <li>Helper marketplace (Page B) live</li>
+          <li>Telephony auto-redirect live</li>
+          <li>TikTok + Yandex Direct launch</li>
+          <li>Bereke partnership + UTM live</li>
+          <li>СНР 4% (platform-economy tax regime)</li>
+          <li>AI bot 0.85 quality at 100% canary</li>
+          <li>Astana Hub residency</li>
+          <li>Target: <strong>10M ₸ revenue / 2M ₸ profit</strong></li>
+        </ul>
+      </div>
+      <div class="tl-item" style="border-color:var(--pink);">
+        <div class="yr" style="color:var(--pink);">Q3 2026 · Grooming + ML deepening</div>
+        <ul>
+          <li>July peak: 15M / 3.5M profit</li>
+          <li>Grooming launch (Aug, +3-4M MRR)</li>
+          <li>0.92 quality (Reflexion · MIPROv2 · det. CI)</li>
+          <li>TikTok + Yandex scale to full ROI</li>
+          <li>Helper-pricing freedom + ratings (marketplace v2)</li>
+          <li>Kaspi recruit pipeline mature</li>
+        </ul>
+      </div>
+      <div class="tl-item" style="border-color:var(--green);">
+        <div class="yr" style="color:var(--green);">Q4 2026 · Scale + Seed kickoff</div>
+        <ul>
+          <li>Cynology launch (Oct, +2-3M MRR)</li>
+          <li>Insurance pilot (Dec, Art. 329 Civil Code)</li>
+          <li>0.95 hybrid quality (BGE-M3 · SFT · GEPA)</li>
+          <li><strong>Seed raise $400-600K</strong> begins at 25M ₸/mo run-rate</li>
+          <li>EOY: 127M ₸ GMV / ~32M cumulative profit</li>
+        </ul>
+      </div>
+      <div class="tl-item" style="border-color:var(--blue);">
+        <div class="yr" style="color:var(--blue);">2027 · Breadth + Series A</div>
+        <ul>
+          <li>H1: service deepening (insurance scale, vet referral)</li>
+          <li>H1: 1st international pilot (options: Georgia / Uzbekistan / Portugal as EU entry)</li>
+          <li>H2: 2nd international launch by traction</li>
+          <li>H2: <strong>50-70M ₸/mo run-rate · ARR $1.5-2M</strong></li>
+          <li>H2: <strong>Series A $2-5M</strong> (AI multiples 20-40x)</li>
+          <li>H2: AI pet-care leader in chosen regional cluster</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="flex:0; margin-top:10px;">
+    <div class="card" style="text-align:center; padding:10px;">
+      <div style="font-size:10px; color:var(--text-secondary);">Apr 2026 actual (above breakeven)</div>
+      <div style="font-size:17px; font-weight:800;">6.4M ₸ revenue</div>
+      <div style="font-size:10px; color:var(--text-secondary);">Breakeven 5.7M cleared</div>
+    </div>
+    <div class="card" style="text-align:center; padding:10px;">
+      <div style="font-size:10px; color:var(--text-secondary);">Dec 2026 (year-end target)</div>
+      <div style="font-size:17px; font-weight:800; color:var(--orange);">25M ₸ / ~7.5M profit</div>
+      <div style="font-size:10px; color:var(--text-secondary);">Seed $400-600K kicks off here</div>
+    </div>
+    <div class="card" style="text-align:center; padding:10px;">
+      <div style="font-size:10px; color:var(--text-secondary);">2027 H2 (Series A)</div>
+      <div style="font-size:17px; font-weight:800; color:var(--green);">50-70M ₸ / 15M+ profit</div>
+      <div style="font-size:10px; color:var(--text-secondary);">ARR $1.5-2M · 4+ services · multi-country</div>
+    </div>
+  </div>
+  <div class="slide-num">09</div>
+</div>
+
+<!-- 10. TEAM -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>Team</h2>
+  <div class="grid-2" style="gap:24px;">
+    <div>
+      <div class="accent-line"></div>
+      <h3>Core team</h3>
+      <div class="card" style="display:flex; align-items:center; gap:14px; padding:14px 18px; margin-bottom:10px;">
+        <div style="width:48px; height:48px; border-radius:50%; background:var(--orange); display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:18px; flex-shrink:0;">ES</div>
+        <div>
+          <div style="font-size:14px; font-weight:700;">Elbic Sabitov</div>
+          <div style="font-size:11px; color:var(--text-secondary); line-height:1.5;">CEO &amp; Founder · Operations · Strategy · AI Architecture</div>
+          <div style="font-size:10px; color:var(--text-secondary); margin-top:2px;">Startup Garage 2023 · Scalerator 2.0 · Sales Bootcamp</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex; align-items:center; gap:14px; padding:14px 18px; margin-bottom:10px;">
+        <div style="width:48px; height:48px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:18px; flex-shrink:0;">KT</div>
+        <div>
+          <div style="font-size:14px; font-weight:700;">Kirill Tsai</div>
+          <div style="font-size:11px; color:var(--text-secondary); line-height:1.5;">CTO &amp; Co-founder · iOS Chapter Lead at Jusan Bank</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex; align-items:center; gap:14px; padding:14px 18px; margin-bottom:10px;">
+        <div style="width:48px; height:48px; border-radius:50%; background:#F97316; display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:18px; flex-shrink:0;">SI</div>
+        <div>
+          <div style="font-size:14px; font-weight:700;">Sofia Ivakhnenko</div>
+          <div style="font-size:11px; color:var(--text-secondary); line-height:1.5;">Head of Sales · Client Relations · AI training lead</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex; align-items:center; gap:14px; padding:14px 18px;">
+        <div style="width:48px; height:48px; border-radius:50%; background:#8B5CF6; display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:18px; flex-shrink:0;">K</div>
+        <div>
+          <div style="font-size:14px; font-weight:700;">Kefir Agency</div>
+          <div style="font-size:11px; color:var(--text-secondary); line-height:1.5;">Marketing partner · Performance &amp; Brand</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="accent-line" style="background:var(--green);"></div>
+      <h3>Advisors &amp; Partners</h3>
+      <div class="card" style="padding:14px 18px; margin-bottom:10px;">
+        <div style="font-size:13px; font-weight:700; margin-bottom:4px;">Arina · Legal advisor</div>
+        <div style="font-size:11px; color:var(--text-secondary); line-height:1.6;">5 years in comms. Platform-economy transformation (СНР 4%), terms-of-service v2, Art. 329 Civil Code KZ guarantee (Rover-style insurance).</div>
+      </div>
+      <div class="card" style="padding:14px 18px; margin-bottom:10px;">
+        <div style="font-size:13px; font-weight:700; margin-bottom:4px;">Cynology expert</div>
+        <div style="font-size:11px; color:var(--text-secondary); line-height:1.6;">Screens every helper. Risk patterns (large dog &times; female helper, aggression, diseases). Unique to KZ.</div>
+      </div>
+      <div class="card" style="padding:14px 18px; margin-bottom:10px;">
+        <div style="font-size:13px; font-weight:700; margin-bottom:4px;">Ecosystem partners</div>
+        <div style="font-size:11px; color:var(--text-secondary); line-height:1.6;">Royal Canin · Mars · Buhta.kz (acquiring) · Bereke Bank (co-marketing Q2 launch)</div>
+      </div>
+      <div class="card" style="padding:14px 18px; background:var(--orange-light); border-color:rgba(245,146,27,0.15);">
+        <div style="font-size:13px; font-weight:700; margin-bottom:4px;">Programs &amp; accelerators</div>
+        <div style="font-size:11px; color:var(--text-secondary); line-height:1.6;">
+          <span class="tag tag-orange" style="font-size:10px;">Startup Garage 2023</span>
+          <span class="tag tag-green" style="font-size:10px;">Scalerator 2.0</span>
+          <span class="tag tag-pink" style="font-size:10px;">Sales Bootcamp</span>
+          <span class="tag tag-blue" style="font-size:10px;">Astana Hub (joining May 2026)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">10</div>
+</div>
+
+<!-- 11. ASK -->
+<div class="slide" style="padding:44px 56px;">
+  <div style="position:absolute; top:0; right:0; width:400px; height:400px; background:radial-gradient(circle at 70% 30%, rgba(245,146,27,0.05) 0%, transparent 70%);"></div>
+  <div style="position:absolute; bottom:0; left:0; width:350px; height:350px; background:radial-gradient(circle at 30% 70%, rgba(232,86,127,0.04) 0%, transparent 70%);"></div>
+
+  <div class="logo">&#128062; Paws</div>
+  <h2 style="font-size:28px; margin-bottom:4px;">Strategic partnerships for global scale</h2>
+  <div style="font-size:13px; color:var(--text-secondary); margin-bottom:14px;">We're not building a local champion to compete with Kaspi/OLX listings. We're building global AI pet-care infrastructure — KZ is the proof point. Breakeven hit, AI is live. <strong style="color:var(--text);">Any one of these partnerships changes the trajectory for years.</strong></div>
+
+  <div class="grid-2" style="gap:14px; flex:0; margin-bottom:12px;">
+    <div class="card" style="padding:14px 16px; background:var(--orange-light); border-color:rgba(245,146,27,0.25);">
+      <div style="font-size:11px; font-weight:700; color:var(--orange); margin-bottom:6px; letter-spacing:0.5px;">&#127974; BANKING SUPER-APP INTEGRATIONS</div>
+      <div style="font-size:11px; line-height:1.65; color:var(--text-secondary);">
+        <div style="margin-bottom:4px;"><strong style="color:var(--text);">Kaspi</strong> — placement in the super-marketplace + installments (AOV +20-30%, access to 14M KZ users)</div>
+        <div style="margin-bottom:4px;"><strong style="color:var(--text);">Freedom Holding</strong> — Freedom Pay + Freedom Insurance + bank, NASDAQ-listed, aggressive CIS/CEE expansion fits our plan</div>
+        <div><strong style="color:var(--text);">Bereke Bank</strong> — banner + UTM (in progress, on plan)</div>
+        <div style="margin-top:6px; font-size:10px; padding-top:6px; border-top:1px dashed rgba(245,146,27,0.3); color:var(--orange);"><strong>Effect:</strong> distribution to millions of users with a single switch</div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px 16px; background:var(--pink-light); border-color:rgba(232,86,127,0.25);">
+      <div style="font-size:11px; font-weight:700; color:var(--pink); margin-bottom:6px; letter-spacing:0.5px;">&#128062; PET-ECOSYSTEM ACCELERATORS / VC</div>
+      <div style="font-size:11px; line-height:1.65; color:var(--text-secondary);">
+        <div style="margin-bottom:4px;"><strong style="color:var(--text);">UNLEASHED by Purina</strong> (Nestle, 2026 cohort) — up to $55K + commercial coaching. <em>Petsy.pl was in 2025 — direct precedent: marketplace + CEE.</em></div>
+        <div style="margin-bottom:4px;"><strong style="color:var(--text);">Leap Venture Studio</strong> (Mars + Michelson) — $200K + 12 weeks + Mars / Royal Canin network</div>
+        <div><strong style="color:var(--text);">Companion Fund II</strong> ($300M Mars + Digitalis) — Series A target, $2-5M checks by 2027</div>
+        <div style="margin-top:6px; font-size:10px; padding-top:6px; border-top:1px dashed rgba(232,86,127,0.3); color:var(--pink);"><strong>Effect:</strong> capital + global brand + distribution + potential strategic exit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="gap:12px; flex:0; margin-bottom:12px;">
+    <div class="card" style="padding:10px 14px; background:var(--green-light); border-color:rgba(46,204,113,0.2);">
+      <div style="font-size:10px; font-weight:700; color:var(--green); margin-bottom:4px; letter-spacing:0.4px;">ALREADY IN MOTION — scaling</div>
+      <div style="font-size:10px; line-height:1.55; color:var(--text-secondary);">
+        Royal Canin / Mars KZ (active outreach — sponsor training, co-branded) · Vet clinics network (bilateral referral live) · In-house cynology academy (supply pipeline for cynology marketplace)
+      </div>
+    </div>
+    <div class="card" style="padding:10px 14px;">
+      <div style="font-size:10px; font-weight:700; color:#8B5CF6; margin-bottom:4px; letter-spacing:0.4px;">OPERATIONAL GAPS</div>
+      <div style="font-size:10px; line-height:1.55; color:var(--text-secondary);">
+        Insurance partner Art. 329 Civil Code for Q4 pilot (legal form, not insurer) · Anthropic Startup Program — API credits + early access
+      </div>
+    </div>
+    <div class="card" style="padding:10px 14px;">
+      <div style="font-size:10px; font-weight:700; color:var(--blue); margin-bottom:4px; letter-spacing:0.4px;">INTERNATIONAL (H1 2027)</div>
+      <div style="font-size:10px; line-height:1.55; color:var(--text-secondary);">
+        Options based on traction: Uzbekistan (36M, bank/telecom anchor) · Georgia (Russian-speaking expat) · Portugal (EU entry pilot)
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--orange-light); border-color:rgba(245,146,27,0.2); padding:10px 22px; margin-bottom:10px; text-align:center;">
+    <div style="font-size:11px; color:var(--text-secondary); margin-bottom:3px;">Best you can offer right now:</div>
+    <div style="font-size:12px; line-height:1.55;">
+      &#10003; <strong>Intro</strong> to Kaspi / Freedom / UNLEASHED / Leap Venture &nbsp;·&nbsp; &#10003; <strong>AI bot demo</strong> + feedback<br>
+      &#10003; <strong>A partner we're missing</strong> &nbsp;·&nbsp; &#10003; <strong>Pre-seed list</strong> ($400-600K, Q4 2026 at 25M ₸/mo run-rate)
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <div style="font-size:20px; font-weight:800; margin-bottom:4px;">Let's talk</div>
+    <div style="font-size:12px; color:var(--text-secondary);">Elbic Sabitov &nbsp;|&nbsp; <span style="color:var(--orange);">@elbics</span> &nbsp;|&nbsp; <span style="color:var(--orange);">elbic.sabitov@gmail.com</span> &nbsp;|&nbsp; +7 777 112 02 27 &nbsp;|&nbsp; <span style="color:var(--orange);">paws.kz</span></div>
+  </div>
+  <div class="slide-num">11</div>
+</div>
+
+
+</body>
+</html>
