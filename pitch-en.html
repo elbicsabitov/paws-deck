@@ -440,15 +440,13 @@
     Two axes that decide who wins the AI services-routing layer: <strong style="color:var(--text);">AI-native flow</strong> (closes the loop end-to-end vs. just ad listing) × <strong style="color:var(--text);">Verified supply</strong> (screening, ratings, insurance vs. anonymous listings).
   </div>
 
-  <!-- 2x2 matrix -->
-  <div style="position:relative; flex:1; margin-bottom:10px; min-height:340px;">
-    <!-- Y axis label -->
-    <div style="position:absolute; left:0; top:50%; transform:rotate(-90deg) translateX(50%); transform-origin:left top; font-size:10px; font-weight:700; color:var(--text-secondary); letter-spacing:1px;">VERIFIED SUPPLY →</div>
-    <!-- X axis label -->
-    <div style="position:absolute; bottom:-2px; left:50%; transform:translateX(-50%); font-size:10px; font-weight:700; color:var(--text-secondary); letter-spacing:1px;">AI-NATIVE END-TO-END FLOW →</div>
-
-    <!-- 2x2 grid -->
-    <div style="margin-left:30px; margin-bottom:24px; height:100%; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:8px; position:relative;">
+  <!-- 2x2 matrix wrapper: vertical Y label | grid | X label below -->
+  <div style="display:flex; flex-direction:column; flex:1; gap:6px; margin-bottom:10px;">
+    <div style="display:flex; gap:10px; flex:1;">
+      <!-- Y axis label, vertical -->
+      <div style="writing-mode:vertical-rl; transform:rotate(180deg); font-size:10px; font-weight:700; color:var(--text-secondary); letter-spacing:1.5px; text-align:center; padding:6px 0; flex-shrink:0;">VERIFIED SUPPLY &rarr;</div>
+      <!-- 2x2 grid -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:8px; flex:1;">
       <!-- Top-left: high-verified, low-AI -->
       <div style="background:#FEF9EF; border:1px solid rgba(245,146,27,0.2); border-radius:10px; padding:14px; display:flex; flex-direction:column; justify-content:center;">
         <div style="font-size:10px; font-weight:700; color:var(--orange); margin-bottom:5px; letter-spacing:0.5px;">VERIFIED · MANUAL FLOW</div>
@@ -474,7 +472,10 @@
         <div style="font-size:13px; font-weight:700; margin-bottom:4px;">VOX · Sierra · Decagon · GPT-wrapper bots</div>
         <div style="font-size:10px; color:var(--text-secondary); line-height:1.5;">VOX (RU, Sber acc, $20K/yr GMV) · Sierra ($10B mcap, $150M ARR) and Decagon ($4.5B, $35M ARR) — but they're enterprise CX deflection, NOT consumer service routing. <strong>Smart agents, no verified supply or transactional close.</strong></div>
       </div>
+      </div>
     </div>
+    <!-- X axis label below grid -->
+    <div style="text-align:center; padding-left:24px; font-size:10px; font-weight:700; color:var(--text-secondary); letter-spacing:1.5px;">AI-NATIVE END-TO-END FLOW &rarr;</div>
   </div>
 
   <div class="card" style="padding:10px 16px; background:var(--orange-light); border-color:rgba(245,146,27,0.2); margin-bottom:8px;">
