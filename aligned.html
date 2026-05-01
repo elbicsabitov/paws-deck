@@ -344,6 +344,66 @@
   <div class="slide-num">06</div>
 </div>
 
+<!-- 6.5 LTV COHORT PROOF -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>LTV / CAC — доказано на 12 когортах</h2>
+  <div style="font-size:12px; color:var(--text-secondary); margin-top:-18px; margin-bottom:14px;">
+    Live-данные из Customer Intelligence Platform · когорты май 2025 → апр 2026 · CAC = 22 000 ₸ (текущий)
+  </div>
+  <div class="grid-2" style="gap:20px;">
+    <div class="card" style="padding:16px;">
+      <h3 style="font-size:14px; margin-bottom:8px;">Observed LTV по когортам</h3>
+      <table style="width:100%; font-size:11px; border-collapse:collapse;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--border); color:var(--text-secondary);">
+            <th style="text-align:left; padding:6px 4px; font-weight:600;">Когорта</th>
+            <th style="text-align:right; padding:6px 4px; font-weight:600;">Кол-во</th>
+            <th style="text-align:right; padding:6px 4px; font-weight:600;">Observed LTV</th>
+            <th style="text-align:right; padding:6px 4px; font-weight:600;">Predicted m12</th>
+            <th style="text-align:right; padding:6px 4px; font-weight:600;">LTV/CAC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:6px 4px; font-weight:600;">Сен'25</td><td style="text-align:right;">77</td><td style="text-align:right;">74 316 ₸</td><td style="text-align:right; color:var(--text-secondary);">56 398</td><td style="text-align:right; color:var(--orange); font-weight:700;">3.38x</td></tr>
+          <tr style="border-bottom:1px solid var(--border); background:var(--green-light);"><td style="padding:6px 4px; font-weight:600;">Окт'25</td><td style="text-align:right;">65</td><td style="text-align:right;"><strong>106 902 ₸</strong></td><td style="text-align:right; color:var(--text-secondary);">84 413</td><td style="text-align:right; color:var(--green); font-weight:700;">4.86x</td></tr>
+          <tr style="border-bottom:1px solid var(--border); background:var(--green-light);"><td style="padding:6px 4px; font-weight:600;">Ноя'25</td><td style="text-align:right;">59</td><td style="text-align:right;"><strong>101 708 ₸</strong></td><td style="text-align:right; color:var(--text-secondary);">67 367</td><td style="text-align:right; color:var(--green); font-weight:700;">4.62x</td></tr>
+          <tr style="border-bottom:1px solid var(--border); background:var(--green-light);"><td style="padding:6px 4px; font-weight:600;">Дек'25</td><td style="text-align:right;">41</td><td style="text-align:right;"><strong>107 920 ₸</strong></td><td style="text-align:right; color:var(--text-secondary);">81 985</td><td style="text-align:right; color:var(--green); font-weight:700;">4.91x</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:6px 4px; font-weight:600;">Янв'26</td><td style="text-align:right;">70</td><td style="text-align:right;">83 497 ₸</td><td style="text-align:right; color:var(--text-secondary);">57 105</td><td style="text-align:right; color:var(--orange); font-weight:700;">3.79x</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:6px 4px; font-weight:600;">Фев'26</td><td style="text-align:right;">34</td><td style="text-align:right;">81 876 ₸</td><td style="text-align:right; color:var(--text-secondary);">65 944</td><td style="text-align:right; color:var(--orange); font-weight:700;">3.72x</td></tr>
+          <tr><td style="padding:6px 4px; font-weight:600; color:var(--text-secondary);">Мар-Апр'26</td><td style="text-align:right; color:var(--text-secondary);">118</td><td style="text-align:right; color:var(--text-secondary);">~63K ₸</td><td style="text-align:right; color:var(--text-secondary);">~53K</td><td style="text-align:right; color:var(--text-secondary);">2.86x*</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:9px; color:var(--text-secondary); margin-top:8px; line-height:1.4;">*Свежие когорты ещё дозревают (m1-m2). Зрелые когорты (Окт-Дек'25) стабильно дают 4.5-5x. Источник: <code>v_predicted_ltv</code>, production DB.</div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="card" style="background:var(--green-light); border-color:rgba(46,204,113,0.25); padding:14px 18px;">
+        <div style="font-size:11px; font-weight:700; color:var(--green); margin-bottom:6px; letter-spacing:0.5px;">ПОЧЕМУ ЭТО РАБОТАЕТ</div>
+        <div style="font-size:12px; line-height:1.65; color:var(--text-secondary);">
+          <div style="margin-bottom:8px;"><strong style="color:var(--text);">58% repeat rate</strong> на 12-мес когортах — владельцы покупают передержку 3-5 раз/год (отпуск, командировки), груминг ежемесячно</div>
+          <div style="margin-bottom:8px;"><strong style="color:var(--text);">CAC снизился 48K → 22K (-54%)</strong> когда AI-квалификация заменила ручных менеджеров</div>
+          <div><strong style="color:var(--text);">Multi-service ladder впереди:</strong> grooming (Q3) и cynology (Q4) поднимают LTV без extra CAC — на уже acquired клиентах</div>
+        </div>
+      </div>
+      <div class="card" style="padding:14px 18px;">
+        <div style="font-size:11px; font-weight:700; color:var(--orange); margin-bottom:6px; letter-spacing:0.5px;">CAC TRAJECTORY (2026)</div>
+        <div style="font-size:12px; line-height:1.7; color:var(--text-secondary);">
+          Янв: 48K ₸ &rarr; Фев: 32K &rarr; Мар: 26K &rarr; <strong style="color:var(--green);">Апр: 22K</strong>
+          <br>
+          <span style="font-size:10px;">Май: запуск TikTok + Yandex Direct + Bereke co-marketing продолжит сжимать. План: ≤17K к Q3.</span>
+        </div>
+      </div>
+      <div class="card" style="padding:12px 18px; background:var(--orange-light); border-color:rgba(245,146,27,0.2);">
+        <div style="font-size:13px; font-weight:700; color:var(--orange); margin-bottom:4px;">Read-only доступ доступен</div>
+        <div style="font-size:11px; color:var(--text-secondary); line-height:1.55;">
+          Инвесторы могут смотреть live cohorts, RFM сегменты, VOC reasons, reconciliation gaps напрямую: <code>89.167.114.175/skvoznaya</code>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">07</div>
+</div>
+
 <!-- 7. КОНКУРЕНТЫ -->
 <div class="slide">
   <div class="logo">&#128062; Paws</div>
@@ -407,7 +467,65 @@
   <div style="text-align:center; font-size:11px; color:var(--text-secondary); margin-top:10px;">
     Rover ($2.3B) и Wag ($350M) не работают в СНГ. Рынок открыт для локального чемпиона.
   </div>
-  <div class="slide-num">07</div>
+  <div class="slide-num">08</div>
+</div>
+
+<!-- 7.5 DEFENSIBILITY -->
+<div class="slide">
+  <div class="logo">&#128062; Paws</div>
+  <h2>Защита бизнеса — 5 структурных moats</h2>
+  <div style="font-size:12px; color:var(--text-secondary); margin-top:-18px; margin-bottom:14px;">
+    «Любой может запустить Telegram-бот.» Верно. Но не такой, который продаёт на 14M ₸ за 71 день и держит NPS. Вот почему gap не закрывается за квартал.
+  </div>
+  <div class="grid-3" style="gap:12px; flex:0; margin-bottom:12px;">
+    <div class="card" style="padding:14px 16px; background:var(--orange-light); border-color:rgba(245,146,27,0.25);">
+      <div style="font-size:11px; font-weight:700; color:var(--orange); margin-bottom:6px; letter-spacing:0.5px;">1 &nbsp; DATA MOAT</div>
+      <h3 style="font-size:14px; margin-bottom:6px;">139K реальных диалогов на 2 языках</h3>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.55;">
+        396 платящих клиентов, 10K+ training диалогов, RU/KZ. Hybrid search 14K vector entries. <strong style="color:var(--text);">Конкуренту с нуля = 8+ месяцев операций до сравнимой data depth.</strong>
+      </div>
+    </div>
+    <div class="card" style="padding:14px 16px; background:var(--pink-light); border-color:rgba(232,86,127,0.25);">
+      <div style="font-size:11px; font-weight:700; color:var(--pink); margin-bottom:6px; letter-spacing:0.5px;">2 &nbsp; HITL TRAINING LOOP</div>
+      <h3 style="font-size:14px; margin-bottom:6px;">Sofia approves каждое сообщение, daily retrain</h3>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.55;">
+        Quality 0.60 сейчас &rarr; 0.85 canary май &rarr; 0.95 к Q4 (BGE-M3 + SFT + GEPA). Каждая поправка фидится в next-day training. <strong style="color:var(--text);">Process moat — нельзя купить.</strong>
+      </div>
+    </div>
+    <div class="card" style="padding:14px 16px; background:var(--green-light); border-color:rgba(46,204,113,0.25);">
+      <div style="font-size:11px; font-weight:700; color:var(--green); margin-bottom:6px; letter-spacing:0.5px;">3 &nbsp; CYNOLOGIST-IN-LOOP</div>
+      <h3 style="font-size:14px; margin-bottom:6px;">Действующий кинолог проверяет каждого помощника</h3>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.55;">
+        Risk patterns: large dog × female helper, агрессия, болезни. <strong style="color:var(--text);">Уникально для KZ — ни Rover/Wag/PetBacker, ни локальные не имеют.</strong> Trust signal за который владельцы платят больше.
+      </div>
+    </div>
+    <div class="card" style="padding:14px 16px; background:#EFF6FF; border-color:rgba(59,130,246,0.25);">
+      <div style="font-size:11px; font-weight:700; color:var(--blue); margin-bottom:6px; letter-spacing:0.5px;">4 &nbsp; HELPER SUPPLY</div>
+      <h3 style="font-size:14px; margin-bottom:6px;">380+ verified, рейтинги, специализации</h3>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.55;">
+        162 в Астане, 221 в Алматы. У каждого order history, рейтинг по типу услуги, район, специализации. <strong style="color:var(--text);">Marketplace supply строится годами, не неделями.</strong>
+      </div>
+    </div>
+    <div class="card" style="padding:14px 16px;">
+      <div style="font-size:11px; font-weight:700; color:#8B5CF6; margin-bottom:6px; letter-spacing:0.5px;">5 &nbsp; REGULATORY / TRUST</div>
+      <h3 style="font-size:14px; margin-bottom:6px;">Insurance, residency, acquiring, brand</h3>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.55;">
+        Insurance pilot ст. 329 ГК (Q4) · Astana Hub residency · СНР 4% · Buhta.kz acquiring · 1 500+ branded клиентов. <strong style="color:var(--text);">Каждый = месяцы юр. работы. У mini-app конкурента ноль trust.</strong>
+      </div>
+    </div>
+    <div class="card" style="padding:14px 16px; background:var(--card-bg); border:2px dashed var(--orange);">
+      <div style="font-size:11px; font-weight:700; color:var(--orange); margin-bottom:6px; letter-spacing:0.5px;">+ &nbsp; CUSTOMER INTELLIGENCE</div>
+      <h3 style="font-size:14px; margin-bottom:6px;">Production analytics layer, не slideware</h3>
+      <div style="font-size:11px; color:var(--text-secondary); line-height:1.55;">
+        Live: 396 платящих сегментированы по 10 RFM, predicted m12 LTV, At-Risk скрипты, VOC reasons (LLM-extracted). <strong style="color:var(--text);">14 alembic миграций compounding data infra.</strong>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="padding:10px 22px; background:var(--orange-light); border-color:rgba(245,146,27,0.2); display:flex; gap:14px; align-items:center; font-size:12px;">
+    <strong style="color:var(--orange);">Bottom line:</strong>
+    <span style="color:var(--text-secondary);">Скопировать Telegram-бота = 1 weekend. Каждый из 5 moats = месяцы или годы. Пока копикат догонит — мы запустим 2 новые услуги и зайдём в 2-ю страну.</span>
+  </div>
+  <div class="slide-num">09</div>
 </div>
 
 <!-- 8. ТРЕКШН ЗА ВРЕМЯ ПРОГРАММЫ -->
@@ -453,7 +571,9 @@
     <div><span style="display:inline-block; width:10px; height:10px; background:var(--orange); border-radius:2px; margin-right:4px; vertical-align:middle;"></span>Факт</div>
     <div><span style="display:inline-block; width:10px; height:10px; background:var(--pink); border-radius:2px; margin-right:4px; vertical-align:middle;"></span>Программа Astana Hub (&dagger;Фев — нижняя часть бара = с 19-го, 1.84M из 5.37M)</div>
     <div><span style="display:inline-block; width:10px; height:10px; background:var(--orange-light); border:1.5px dashed var(--orange); border-radius:2px; margin-right:4px; vertical-align:middle;"></span>Прогноз</div>
-    <div style="margin-left:auto;"><strong>EOY 2026:</strong> 127M ₸ GMV · ~32M ₸ profit cumulative · run-rate Dec 25M ₸/мес</div>
+  </div>
+  <div class="card" style="background:var(--green-light); border-color:rgba(46,204,113,0.2); padding:8px 16px; margin-top:8px; font-size:11px; color:var(--text-secondary);">
+    <strong style="color:var(--green);">12-мес cumulative (май'25 → апр'26):</strong> ~104M ₸ GMV · <strong style="color:var(--text);">396 платящих клиентов</strong> · <strong style="color:var(--text);">58% repeat rate</strong> · <strong style="color:var(--text);">EOY 2026:</strong> 127M ₸ GMV / ~32M cumulative profit / Dec run-rate 25M ₸/мес
   </div>
 
   <h3 style="margin-bottom:6px; font-size:13px; margin-top:14px;">Эволюция платформы — реальный план</h3>
@@ -484,7 +604,7 @@
       <div style="font-size:9px; color:var(--text-secondary); line-height:1.4;">Cynology · ст.329 ГК pilot · BGE-M3 + GEPA · старт Seed раунда</div>
     </div>
   </div>
-  <div class="slide-num">08</div>
+  <div class="slide-num">10</div>
 </div>
 
 <!-- 9. РОУДМЭП -->
@@ -559,7 +679,7 @@
       <div style="font-size:10px; color:var(--text-secondary);">ARR $1.5-2M · 4+ услуги · multi-country</div>
     </div>
   </div>
-  <div class="slide-num">09</div>
+  <div class="slide-num">11</div>
 </div>
 
 <!-- 10. КОМАНДА -->
@@ -626,7 +746,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">10</div>
+  <div class="slide-num">12</div>
 </div>
 
 <!-- 11. ВАШ ЗАПРОС -->
@@ -693,7 +813,7 @@
     <div style="font-size:20px; font-weight:800; margin-bottom:4px;">Поговорим</div>
     <div style="font-size:12px; color:var(--text-secondary);">Элбик Сабитов &nbsp;|&nbsp; <span style="color:var(--orange);">@elbics</span> &nbsp;|&nbsp; <span style="color:var(--orange);">elbic.sabitov@gmail.com</span> &nbsp;|&nbsp; +7 777 112 02 27 &nbsp;|&nbsp; <span style="color:var(--orange);">paws.kz</span></div>
   </div>
-  <div class="slide-num">11</div>
+  <div class="slide-num">13</div>
 </div>
 
 
